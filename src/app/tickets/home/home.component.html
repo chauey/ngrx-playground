@@ -1,0 +1,16 @@
+<div class="tickets-panel">
+  <h2 class="title">All Tickets</h2>
+  <div class="counters">
+    <p>Uncompleted: {{uncompletedTotal$ | async}}</p>
+  </div>
+  <mat-tab-group>
+    <mat-tab label="Uncompleted">
+      <tickets-card-list [tickets]="uncompletedTickets$ | async" (complete)="complete($event)">
+      </tickets-card-list>
+    </mat-tab>
+    <mat-tab label="Completed">
+      <tickets-card-list [tickets]="completedTickets$ | async" (complete)="complete($event)">
+      </tickets-card-list>
+    </mat-tab>
+  </mat-tab-group>
+</div>

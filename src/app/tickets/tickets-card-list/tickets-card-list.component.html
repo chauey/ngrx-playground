@@ -1,0 +1,24 @@
+<mat-card *ngFor="let ticket of tickets" class="ticket-card mat-elevation-z10">
+  <mat-card-header>
+    <mat-card-title>{{ticket.description}}</mat-card-title>
+  </mat-card-header>
+  <!-- <img mat-card-image [src]="ticket.iconUrl"> -->
+  <mat-card-content>
+    <p>completed: {{ticket.completed}}</p>
+  </mat-card-content>
+  <mat-card-content>
+    <p>assigneeId: {{ticket.assigneeId}}</p>
+  </mat-card-content>
+  <mat-card-actions class="ticket-actions">
+    <button mat-button class="mat-raised-button mat-primary" [routerLink]="['/tickets', ticket.id]">
+      VIEW
+    </button>
+    <button mat-button class="mat-raised-button mat-accent" (click)="editTicket(ticket)">
+      EDIT
+    </button>
+    <mat-checkbox class="example-margin" (change)="toggleComplete(ticket.id, ticket.completed)" [checked]="ticket.completed ">Completed</mat-checkbox>
+    <!-- <button mat-button class="mat-raised-button mat-accent" (click)="complete(ticket)">
+      COMPLETE
+    </button> -->
+  </mat-card-actions>
+</mat-card>
