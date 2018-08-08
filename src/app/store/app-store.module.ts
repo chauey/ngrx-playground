@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CustomSerializer } from '@app/shared/utils';
+import { CustomSerializer, routerReducers } from '@app/shared/utils';
 import { appConfigReducers, appConfigServices } from '@app/store/app-config';
 import { EffectsModule } from '@ngrx/effects';
 import { RouterStateSerializer, StoreRouterConnectingModule } from "@ngrx/router-store";
@@ -15,12 +15,12 @@ export const metaReducers: MetaReducer<any>[] = environment.production
 
 @NgModule({
   imports: [
-    StoreModule.forRoot({}, { metaReducers }),
+    StoreModule.forRoot(routerReducers, { metaReducers }),
     EffectsModule.forRoot([]),
     StoreModule.forFeature('appConfig', appConfigReducers),
     // EntityStoreModule,
     environment.production ? [] : StoreDevtoolsModule.instrument(),
-    StoreRouterConnectingModule.forRoot({stateKey:'router'})
+    StoreRouterConnectingModule.forRoot({ stateKey: 'router' })
   ],
   providers: [appConfigServices,
     { provide: RouterStateSerializer, useClass: CustomSerializer }]

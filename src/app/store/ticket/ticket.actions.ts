@@ -9,6 +9,7 @@ export enum TicketActionTypes {
   AssignSucceeded = '[Ticket] Assign Succeeded',
   Complete = '[Ticket] Completed',
   CompleteSucceed = '[Ticket] Completed Succeed',
+  Added = '[Ticket] Added',
 
   TicketRequested = '[View Ticket Page] Ticket Requested',
   TicketLoaded = '[Tickets API] Ticket Loaded',
@@ -18,6 +19,13 @@ export enum TicketActionTypes {
   LessonsPageRequested = '[Ticket Landing Page] Lessons Page Requested',
   LessonsPageLoaded = '[Tickets API] Lessons Page Loaded',
   LessonsPageCancelled = '[Tickets API] Lessons Page Cancelled'
+  , SET_FILTER = 'ngrx-data/set-filter',
+  QUERY_BY_KEY = 'ngrx-data/query-by-key',
+  QUERY_BY_KEY_SUCCESS = 'ngrx-data/query-by-key/success',
+  QUERY_BY_KEY_ERROR = 'ngrx-data/query-by-key/error',
+  QUERY_LOAD = 'ngrx-data/query-load',
+  QUERY_LOAD_SUCCESS = 'ngrx-data/query-load/success',
+  QUERY_LOAD_ERROR = 'ngrx-data/query-load/error',
 }
 
 export interface PageQuery {
@@ -25,7 +33,16 @@ export interface PageQuery {
   pageSize: number;
 }
 
-export class AssignedAction implements Action {
+export class SetFilterAction implements Action {
+  readonly type = TicketActionTypes.SET_FILTER;
+  constructor(public payload: string) {
+  }
+}
+export class AddedAction implements Action {
+  readonly type = TicketActionTypes.Added;
+  constructor(public payload: Ticket) {
+  }
+} export class AssignedAction implements Action {
   readonly type = TicketActionTypes.Assigned;
   constructor(public payload: { id: number, userId: number }) {
   }
@@ -71,8 +88,10 @@ export class TicketSaved implements Action {
 }
 
 export type TicketActions =
+  AddedAction |
   AssignedAction | AssignSucceededAction |
   CompleteAction | CompleteSucceedAction |
+  SetFilterAction |
   TicketRequested
   | TicketLoaded
   | AllTicketsRequested

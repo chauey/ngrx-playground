@@ -1,12 +1,14 @@
 import { CommonModule } from '@angular/common';
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { IdGeneratorService } from '@app/core/id-generator.service';
 // import { ToastService } from './toast.service';
 import { throwIfAlreadyLoaded } from '@app/core/module-import-check';
 // import { IdGeneratorService } from './id-generator.service';
 // import { ToggleDataSourceComponent } from './toggle-data-source.component';
 import { ToolbarComponent } from '@app/core/toolbar/toolbar.component';
 import { SharedModule } from '@app/shared/shared.module';
+import { ToastService } from './toast.service';
 
 
 @NgModule({
@@ -15,9 +17,9 @@ import { SharedModule } from '@app/shared/shared.module';
     SharedModule,
     RouterModule // because we use <router-outlet> and routerLink
   ],
-  declarations: [ToolbarComponent], // [ToggleDataSourceComponent, ToolbarComponent],
-  exports: [ToolbarComponent], // [ToggleDataSourceComponent, ToolbarComponent],
-  providers: [] // [IdGeneratorService, ToastService]
+  declarations: [ToolbarComponent], // [ToggleDataSourceComponent],
+  exports: [ToolbarComponent], // [ToggleDataSourceComponent],
+  providers: [IdGeneratorService, ToastService]
 })
 export class CoreModule {
   constructor(

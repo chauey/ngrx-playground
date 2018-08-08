@@ -3,8 +3,9 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material";
 import { BackendService } from "@app/backend.service";
 import { User } from "@app/core";
+import { IdGeneratorService } from '@app/core/id-generator.service';
 import { AppState } from "@app/store";
-import { TicketSaved } from '@app/store/ticket';
+import { AddedAction, TicketSaved } from '@app/store/ticket';
 import { selectAllUsers } from "@app/store/user";
 import { Ticket } from "@app/tickets/model/ticket";
 import { Update } from "@ngrx/entity";
@@ -29,7 +30,8 @@ export class TicketDialogComponent implements OnInit {
     private ticketsService: BackendService,
     private fb: FormBuilder,
     private dialogRef: MatDialogRef<TicketDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) ticket: Ticket) {
+    @Inject(MAT_DIALOG_DATA) ticket: Ticket,
+    private idGenerator: IdGeneratorService) {
 
     this.ticketId = ticket.id;
     this.description = ticket.description;
@@ -70,7 +72,15 @@ export class TicketDialogComponent implements OnInit {
       id: this.ticketId,
       changes
     };
-    this.store.dispatch(new TicketSaved({ ticket }));
+
+    if (ticket.id) {
+      this.store.dispatch(new TicketSaved({ ticket }));
+    } else {
+      debugger;
+      const id = this.idGenerator.nextId();
+      this.store.dispatch(new AddedAction({ ...changes, id }));
+    }
+
     this.dialogRef.close();
 
     // TODO: input validation
@@ -89,6 +99,8 @@ export class TicketDialogComponent implements OnInit {
     // }
     // );
   }
+
+
 
   close() {
     this.dialogRef.close();

@@ -20,6 +20,11 @@ export const selectUncompletedTickets = createSelector(
   selectAllTickets,
   tickets => tickets.filter(ticket => !ticket.completed)
 );
+export const selectFilteredTickets = (pattern: string) => createSelector(
+  selectAllTickets,
+  tickets => tickets.filter(ticket => ticket.description.indexOf(pattern) >= -1)
+);
+
 export const selectUncompletedTotal = createSelector(
   selectAllTickets,
   tickets => tickets.filter(ticket => !ticket.completed).length
@@ -28,3 +33,4 @@ export const allTicketsLoaded = createSelector(
   selectTicketsState,
   ticketsState => ticketsState.allTicketsLoaded
 );
+

@@ -1,3 +1,11 @@
+<div class="control-panel">
+  <div class="button-panel">
+    <!-- <button mat-raised-button color="primary" type="button" (click)="getTickets()" matTooltip="Refresh the tickets">Refresh</button> -->
+    <button mat-raised-button color="primary" type="button" (click)="addTicket()" *ngIf="!selectedTicket" matTooltip="Add a new ticket">Add</button>
+  </div>
+  <!-- <app-filter [filterObserver]="filterObserver" filterPlaceholder="Filter by each ticket's description" class="filter-panel"></app-filter> -->
+</div>
+
 <div class="tickets-panel">
   <h2 class="title">All Tickets</h2>
   <div class="counters">
