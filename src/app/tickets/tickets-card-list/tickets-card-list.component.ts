@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatDialog, MatDialogConfig } from "@angular/material";
+import { User } from '@app/core';
 import { Ticket } from "@app/tickets/model/ticket";
 import { TicketDialogComponent } from "@app/tickets/ticket-dialog/ticket-dialog.component";
 
@@ -11,7 +12,9 @@ import { TicketDialogComponent } from "@app/tickets/ticket-dialog/ticket-dialog.
 export class TicketsCardListComponent implements OnInit {
 
   @Input() tickets: Ticket[];
+  @Input() users: User[];
   @Output('complete') completeEvent = new EventEmitter<{ticketId: number, completed: boolean}>();
+  @Output('assign') assignEvent = new EventEmitter<{id: number, userId: number}>();
 
   constructor(private dialog: MatDialog) {
   }
@@ -35,6 +38,10 @@ export class TicketsCardListComponent implements OnInit {
 
   toggleComplete(id: number, completed: boolean) {
     this.completeEvent.emit({ ticketId: id, completed: !completed })
+  }
+
+  assign(id: number, userId: number) {
+    this.assignEvent.emit({ id: id, userId: userId })
   }
 
   // complete(ticket: Ticket) {

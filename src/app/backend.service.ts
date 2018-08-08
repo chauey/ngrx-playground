@@ -30,12 +30,12 @@ export class BackendService {
     {
       id: 1,
       description: 'Move the desk to the new location',
-      assigneeId: 111,
+      assigneeId: 222,
       completed: false
     }
   ];
 
-  storedUsers: User[] = [{ id: 111, name: 'Victor' }];
+  storedUsers: User[] = [{ id: 111, name: 'Victor' }, { id: 222, name: 'Nitin' }];
 
   lastId = 1;
 

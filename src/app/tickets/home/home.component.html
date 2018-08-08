@@ -5,11 +5,11 @@
   </div>
   <mat-tab-group>
     <mat-tab label="Uncompleted">
-      <tickets-card-list [tickets]="uncompletedTickets$ | async" (complete)="complete($event)">
+      <tickets-card-list [tickets]="uncompletedTickets$ | async" [users]="users$ | async" (complete)="complete($event)" (assign)="assign($event)">
       </tickets-card-list>
     </mat-tab>
     <mat-tab label="Completed">
-      <tickets-card-list [tickets]="completedTickets$ | async" (complete)="complete($event)">
+      <tickets-card-list [tickets]="completedTickets$ | async" [users]="users$ | async" (complete)="complete($event)" (assign)="assign($event)">
       </tickets-card-list>
     </mat-tab>
   </mat-tab-group>

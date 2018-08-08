@@ -17,7 +17,7 @@ import { Observable } from "rxjs";
   styleUrls: ['./ticket-dialog.component.css']
 })
 export class TicketDialogComponent implements OnInit {
-  allUsers$: Observable<User[]>;
+  users$: Observable<User[]>;
   ticketId: number;
 
   form: FormGroup;
@@ -42,7 +42,7 @@ export class TicketDialogComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.allUsers$ = this.store.pipe(select(selectAllUsers));;
+    this.users$ = this.store.pipe(select(selectAllUsers));;
   }
 
   assign() {
@@ -51,25 +51,31 @@ export class TicketDialogComponent implements OnInit {
     this.ticketsService
       .assign(this.ticketId, changes['assigneeId'])
       .subscribe(
-      () => {
-        const ticket: Update<Ticket> = {
-          id: this.ticketId,
-          changes
-        };
+        () => {
+          const ticket: Update<Ticket> = {
+            id: this.ticketId,
+            changes
+          };
 
-        this.store.dispatch(new TicketSaved({ ticket }));
+          this.store.dispatch(new TicketSaved({ ticket }));
 
-        this.dialogRef.close();
-      }
+          this.dialogRef.close();
+        }
       );
   }
 
   save() {
     const changes = this.form.value;
+    const ticket: Update<Ticket> = {
+      id: this.ticketId,
+      changes
+    };
+    this.store.dispatch(new TicketSaved({ ticket }));
+    this.dialogRef.close();
 
     // TODO: input validation
     // UNDONE: save on service
-    console.log('save undone');
+    // console.log('save undone');
     // this.ticketsService
     // .saveTicket(this.ticketId, changes)
     // .subscribe(
