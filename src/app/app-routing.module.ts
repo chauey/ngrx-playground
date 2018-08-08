@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'tickets' },
@@ -7,15 +7,15 @@ const routes: Routes = [
     path: 'tickets',
     loadChildren: 'app/tickets/tickets.module#TicketsModule'
   },
-  // {
-  //   path: 'villains',
-  //   loadChildren: 'app/villains/villains.module#VillainsModule'
-  // },
-  { path: '**', redirectTo: 'tickets' } // bad routes redirect to heroes
+  {
+    path: 'users',
+    loadChildren: 'app/users/users.module#UsersModule'
+  },
+  { path: '**', redirectTo: 'tickets' } // bad routes redirect to tickets
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
