@@ -74,10 +74,9 @@ export class TicketDialogComponent implements OnInit {
       changes
     };
 
-    if (ticket.id) {
+    if (ticket.id != null && ticket.id != undefined) {
       this.store.dispatch(new TicketSaved({ ticket }));
     } else {
-      debugger;
       const id = this.idGenerator.nextId();
       this.store.dispatch(new AddedAction({ ...changes, id }));
     }
