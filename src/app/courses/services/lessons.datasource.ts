@@ -7,8 +7,8 @@ import { BehaviorSubject, Observable, of } from "rxjs";
 import { catchError, tap } from 'rxjs/operators';
 import { LessonsPageRequested, PageQuery } from '../../courses/course.actions';
 import { selectLessonsPage } from '../../courses/course.selectors';
+import { Lesson } from "../../courses/model/lesson";
 import { AppState } from '../../store';
-import { Lesson } from "../..courses/model/lesson";
 
 
 

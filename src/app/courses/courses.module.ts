@@ -10,15 +10,15 @@ import { MatTabsModule } from "@angular/material/tabs";
 import { RouterModule, Routes } from "@angular/router";
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
-import { CourseDialogComponent } from "../..courses/course-dialog/course-dialog.component";
-import { CourseComponent } from "../..courses/course/course.component";
-import { CoursesCardListComponent } from "../..courses/courses-card-list/courses-card-list.component";
-import { HomeComponent } from "../..courses/home/home.component";
-import { CourseResolver } from "../..courses/services/course.resolver";
-import { CoursesService } from "../..courses/services/courses.service";
+import { CourseDialogComponent } from "../courses/course-dialog/course-dialog.component";
 import { CourseEffects } from '../courses/course.effects';
 import { coursesReducer } from '../courses/course.reducers';
+import { CourseComponent } from "../courses/course/course.component";
+import { CoursesCardListComponent } from "../courses/courses-card-list/courses-card-list.component";
+import { HomeComponent } from "../courses/home/home.component";
 import { lessonsReducer } from '../courses/lessons.reducers';
+import { CourseResolver } from "../courses/services/course.resolver";
+import { CoursesService } from "../courses/services/courses.service";
 
 
 export const coursesRoutes: Routes = [

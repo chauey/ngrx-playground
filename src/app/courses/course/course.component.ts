@@ -7,9 +7,9 @@ import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { PageQuery } from '../../courses/course.actions';
 import { selectLessonsLoading } from '../../courses/course.selectors';
+import { Course } from "../../courses/model/course";
+import { LessonsDataSource } from "../../courses/services/lessons.datasource";
 import { AppState } from '../../store';
-import { Course } from "../..courses/model/course";
-import { LessonsDataSource } from "../..courses/services/lessons.datasource";
 
 
 @Component({

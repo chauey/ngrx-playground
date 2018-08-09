@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 // import {LessonsDataSource} from "../services/lessons.datasource";
 import { AppState } from '../../store';
 import { PageQuery } from '../../store/ticket';
-import { Ticket } from "../..tickets/model/ticket";
+import { Ticket } from "../../tickets/model/ticket";
 // import {selectLessonsLoading} from '../ticket.selectors';
 
 @Component({

@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from "@angular/material";
-import { CourseDialogComponent } from "../..courses/course-dialog/course-dialog.component";
-import { Course } from "../..courses/model/course";
+import { CourseDialogComponent } from "../../courses/course-dialog/course-dialog.component";
+import { Course } from "../../courses/model/course";
 
 @Component({
     selector: 'courses-card-list',

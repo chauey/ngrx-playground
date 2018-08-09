@@ -3,8 +3,8 @@ import { select, Store } from '@ngrx/store';
 import { Observable } from "rxjs";
 import { AllCoursesRequested } from '../../courses/course.actions';
 import { selectAdvancedCourses, selectBeginnerCourses, selectPromoTotal } from '../../courses/course.selectors';
+import { Course } from "../../courses/model/course";
 import { AppState } from '../../store';
-import { Course } from "../..courses/model/course";
 @Component({
     selector: 'home',
     templateUrl: './home.component.html',
