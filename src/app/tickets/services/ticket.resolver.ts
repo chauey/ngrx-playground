@@ -1,12 +1,12 @@
 import { Injectable } from "@angular/core";
 import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from "@angular/router";
-import { AppState } from "@app/store";
-import { Ticket } from "@app/tickets/model/ticket";
-import { TicketsService } from "@app/tickets/services/tickets.service";
 import { select, Store } from "@ngrx/store";
 import { Observable } from "rxjs";
 import { filter, first, tap } from "rxjs/operators";
+import { AppState } from "../../store";
 import { selectById, TicketRequested } from '../../store/ticket';
+import { Ticket } from "../../tickets/model/ticket";
+import { TicketsService } from "../../tickets/services/tickets.service";
 
 
 

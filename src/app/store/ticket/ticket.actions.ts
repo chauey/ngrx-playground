@@ -1,6 +1,6 @@
-import { Ticket } from "@app/core/model";
 import { Update } from '@ngrx/entity';
 import { Action } from '@ngrx/store';
+import { Ticket } from "../../core/model";
 
 // import {Lesson} from './model/lesson';
 

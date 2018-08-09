@@ -1,8 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatDialog, MatDialogConfig } from "@angular/material";
-import { Ticket } from "@app/tickets/model/ticket";
-import { TicketDialogComponent } from "@app/tickets/ticket-dialog/ticket-dialog.component";
 import { User } from '../../core';
+import { Ticket } from "../../tickets/model/ticket";
+import { TicketDialogComponent } from "../../tickets/ticket-dialog/ticket-dialog.component";
 
 @Component({
   selector: 'tickets-card-list',

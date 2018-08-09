@@ -13,18 +13,18 @@ import { NgModule } from '@angular/core';
 // import { MatButtonModule } from "@angular/material/button";
 // import { MatIconModule } from "@angular/material/icon";
 import { RouterModule, Routes } from "@angular/router";
-import { SharedModule } from "@app/shared/shared.module";
-// import { CommonModule } from '@angular/common';
-import { HomeComponent } from "@app/tickets/home/home.component";
-import { TicketResolver } from "@app/tickets/services/ticket.resolver";
-import { TicketsService } from "@app/tickets/services/tickets.service";
-import { TicketDialogComponent } from "@app/tickets/ticket-dialog/ticket-dialog.component";
-import { TicketComponent } from "@app/tickets/ticket/ticket.component";
-import { TicketsCardListComponent } from "@app/tickets/tickets-card-list/tickets-card-list.component";
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
+import { SharedModule } from "../shared/shared.module";
 import { TicketEffects, ticketsReducer } from '../store/ticket';
 import { UserEffects, usersReducer } from '../store/user';
+// import { CommonModule } from '@angular/common';
+import { HomeComponent } from "../tickets/home/home.component";
+import { TicketResolver } from "../tickets/services/ticket.resolver";
+import { TicketsService } from "../tickets/services/tickets.service";
+import { TicketDialogComponent } from "../tickets/ticket-dialog/ticket-dialog.component";
+import { TicketComponent } from "../tickets/ticket/ticket.component";
+import { TicketsCardListComponent } from "../tickets/tickets-card-list/tickets-card-list.component";
 
 export const ticketsRoutes: Routes = [
   {

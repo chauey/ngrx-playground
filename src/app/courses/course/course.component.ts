@@ -2,14 +2,14 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from "@angular/material";
 import { ActivatedRoute } from "@angular/router";
-import { Course } from "@app/courses/model/course";
-import { LessonsDataSource } from "@app/courses/services/lessons.datasource";
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { PageQuery } from '../../courses/course.actions';
 import { selectLessonsLoading } from '../../courses/course.selectors';
 import { AppState } from '../../store';
+import { Course } from "../..courses/model/course";
+import { LessonsDataSource } from "../..courses/services/lessons.datasource";
 
 
 @Component({

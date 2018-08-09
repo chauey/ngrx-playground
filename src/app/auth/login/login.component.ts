@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
-import { AuthService } from "@app/auth/auth.service";
 import { Store } from "@ngrx/store";
 import { noop } from "rxjs";
 import { tap } from "rxjs/operators";
 import { Login } from '../../auth/auth.actions';
+import { AuthService } from "../../auth/auth.service";
 import { AppState } from '../../store';
 
 

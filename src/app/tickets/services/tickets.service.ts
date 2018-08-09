@@ -2,9 +2,9 @@
 
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Ticket } from "@app/tickets/model/ticket";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
+import { Ticket } from "../..tickets/model/ticket";
 
 @Injectable()
 export class TicketsService {

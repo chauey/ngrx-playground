@@ -1,19 +1,19 @@
 import { Injectable } from '@angular/core';
-import { BackendService } from "@app/backend.service";
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { select, Store } from '@ngrx/store';
 import { map, mergeMap, withLatestFrom } from "rxjs/operators";
+import { BackendService } from "../../backend.service";
 // import { UsersService } from './services/users.service';
 import { AppState } from '../../store';
 import {
 LoadAction, LoadSucceedAction
-    // UserLoaded,
-    // UserRequested
-    // , LessonsPageCancelled, LessonsPageLoaded, LessonsPageRequested
-    ,
-    // AllUsersLoaded,
-    // AllUsersRequested,
-    UserActionTypes
+  // UserLoaded,
+  // UserRequested
+  // , LessonsPageCancelled, LessonsPageLoaded, LessonsPageRequested
+  ,
+  // AllUsersLoaded,
+  // AllUsersRequested,
+  UserActionTypes
 } from '../../store/user/user.actions';
 import { selectAllUsers } from '../../store/user/user.selectors';
 

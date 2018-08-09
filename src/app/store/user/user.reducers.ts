@@ -1,6 +1,6 @@
-import { User } from "@app/core";
-import { UserActions, UserActionTypes } from "@app/store/user/user.actions";
 import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
+import { User } from "../../core";
+import { UserActions, UserActionTypes } from "../../store/user/user.actions";
 
 export interface UsersState extends EntityState<User> {
   loading: boolean;

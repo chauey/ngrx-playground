@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MatDialog, MatDialogConfig } from '@angular/material';
-import { Ticket, User } from "@app/core/model";
-import { LoadAction, selectAllUsers } from "@app/store/user";
 import { select, Store } from '@ngrx/store';
 import { Observable } from "rxjs";
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
+import { Ticket, User } from "../../core/model";
 import { FilterObserver } from '../../shared/filter';
 import { AppState } from '../../store';
 import { AddedAction, AllTicketsRequested, AssignedAction, CompleteAction, SetFilterAction } from '../../store/ticket';
 import * as fromTickets from '../../store/ticket/ticket.selectors';
+import { LoadAction, selectAllUsers } from "../../store/user";
 import { TicketDialogComponent } from '../../tickets/ticket-dialog/ticket-dialog.component';
 @Component({
   selector: 'home',

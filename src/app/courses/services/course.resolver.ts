@@ -3,14 +3,14 @@
 
 import { Injectable } from "@angular/core";
 import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from "@angular/router";
-import { Course } from "@app/courses/model/course";
-import { CoursesService } from "@app/courses/services/courses.service";
-import { AppState } from "@app/store";
 import { select, Store } from "@ngrx/store";
 import { Observable } from "rxjs";
 import { filter, first, tap } from "rxjs/operators";
 import { CourseRequested } from '../../courses/course.actions';
 import { selectCourseById } from '../../courses/course.selectors';
+import { Course } from "../../courses/model/course";
+import { CoursesService } from "../../courses/services/courses.service";
+import { AppState } from "../../store";
 
 
 

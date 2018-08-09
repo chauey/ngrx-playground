@@ -1,4 +1,4 @@
-import { Ticket } from "@app/core";
+import { Ticket } from "../../core";
 
 /**
  * Filters the `entities` array argument and returns the original `entities`,

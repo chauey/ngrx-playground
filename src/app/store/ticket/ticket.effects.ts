@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { BackendService } from "@app/backend.service";
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { select, Store } from '@ngrx/store';
 import { filter, map, mergeMap, withLatestFrom } from "rxjs/operators";
+import { BackendService } from "../../backend.service";
 // import { TicketsService } from './services/tickets.service';
 import { AppState } from '../../store';
 import { AllTicketsLoaded, AllTicketsRequested, CompleteAction, CompleteSucceedAction, TicketActionTypes, TicketLoaded, TicketRequested } from './ticket.actions';

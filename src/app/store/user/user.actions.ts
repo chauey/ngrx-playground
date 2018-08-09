@@ -1,5 +1,5 @@
-import { User } from "@app/core";
 import { Action } from '@ngrx/store';
+import { User } from "../../core";
 // import { User } from './model/user';
 
 export enum UserActionTypes {

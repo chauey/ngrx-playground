@@ -1,12 +1,12 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material";
-import { Course } from "@app/courses/model/course";
-import { CoursesService } from "@app/courses/services/courses.service";
-import { AppState } from "@app/store";
 import { Update } from "@ngrx/entity";
 import { Store } from "@ngrx/store";
-import { CourseSaved } from '../courses/course.actions';
+import { CourseSaved } from '../../courses/course.actions';
+import { Course } from "../../courses/model/course";
+import { CoursesService } from "../../courses/services/courses.service";
+import { AppState } from "../../store";
 
 @Component({
     selector: 'course-dialog',
