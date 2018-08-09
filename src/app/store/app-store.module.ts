@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
-import { CustomSerializer, routerReducers } from '@app/shared/utils';
-import { appConfigReducers, appConfigServices } from '@app/store/app-config';
 import { EffectsModule } from '@ngrx/effects';
 import { RouterStateSerializer, StoreRouterConnectingModule } from "@ngrx/router-store";
 import { MetaReducer, StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 // import { EntityStoreModule } from './entity/entity-store.module';
 import { environment } from 'environments/environment';
+import { CustomSerializer, routerReducers } from '../shared/utils';
+import { appConfigReducers, appConfigServices } from '../store/app-config';
 
 
 export const metaReducers: MetaReducer<any>[] = environment.production

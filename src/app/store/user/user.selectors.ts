@@ -1,6 +1,6 @@
-import * as fromUser from '@app/store/user/user.reducers';
-import { UsersState } from '@app/store/user/user.reducers';
 import { createFeatureSelector, createSelector } from '@ngrx/store';
+import * as fromUser from '../../store/user/user.reducers';
+import { UsersState } from '../../store/user/user.reducers';
 
 
 // import * as fromLesson from './lessons.reducers';

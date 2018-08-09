@@ -3,14 +3,14 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material";
 import { BackendService } from "@app/backend.service";
 import { User } from "@app/core";
-import { IdGeneratorService } from '@app/core/id-generator.service';
 import { AppState } from "@app/store";
-import { AddedAction, TicketSaved } from '@app/store/ticket';
 import { selectAllUsers } from "@app/store/user";
 import { Ticket } from "@app/tickets/model/ticket";
 import { Update } from "@ngrx/entity";
 import { select, Store } from "@ngrx/store";
 import { Observable } from "rxjs";
+import { IdGeneratorService } from '../../core/id-generator.service';
+import { AddedAction, TicketSaved } from '../../store/ticket';
 
 @Component({
   selector: 'ticket-dialog',

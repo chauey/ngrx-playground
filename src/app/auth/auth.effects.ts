@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthActionTypes, Login, Logout } from '@app/auth/auth.actions';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { defer, of } from 'rxjs';
 import { tap } from 'rxjs/operators';
+import { AuthActionTypes, Login, Logout } from '../auth/auth.actions';
 
 
 @Injectable()

@@ -1,3 +1,7 @@
+import { AuthEffects } from '..uth/auth.effects';
+import { AuthGuard } from '..uth/auth.guard';
+import * as fromAuth from '..uth/auth.reducer';
+import { LoginComponent } from '..uth/login/login.component';
 import { CommonModule } from '@angular/common';
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { ReactiveFormsModule } from "@angular/forms";
@@ -5,11 +9,7 @@ import { MatInputModule } from "@angular/material";
 import { MatButtonModule } from "@angular/material/button";
 import { MatCardModule } from "@angular/material/card";
 import { RouterModule } from "@angular/router";
-import { AuthEffects } from '@app/auth/auth.effects';
-import { AuthGuard } from '@app/auth/auth.guard';
-import * as fromAuth from '@app/auth/auth.reducer';
 import { AuthService } from "@app/auth/auth.service";
-import { LoginComponent } from '@app/auth/login/login.component';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 

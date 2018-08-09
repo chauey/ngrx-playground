@@ -1,7 +1,7 @@
-import { Course } from '@app/courses/model/course';
-import { Lesson } from '@app/courses/model/lesson';
 import { Update } from '@ngrx/entity';
 import { Action } from '@ngrx/store';
+import { Course } from '../courses/model/course';
+import { Lesson } from '../courses/model/lesson';
 
 
 export enum CourseActionTypes {

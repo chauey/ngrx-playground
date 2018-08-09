@@ -1,15 +1,14 @@
 
 
 
-import {CollectionViewer, DataSource} from "@angular/cdk/collections";
-import {Observable, BehaviorSubject, of} from "rxjs";
-import {Lesson} from "@app/courses/model/lesson";
-import {CoursesService} from "@app/courses/services/courses.service";
-import {catchError, finalize, tap} from 'rxjs/operators';
-import {AppState} from '@app/store';
-import {select, Store} from '@ngrx/store';
-import {LessonsPageRequested, PageQuery} from '@app/courses/course.actions';
-import {selectLessonsPage} from '@app/courses/course.selectors';
+import { CollectionViewer, DataSource } from "@angular/cdk/collections";
+import { Lesson } from "@app/courses/model/lesson";
+import { select, Store } from '@ngrx/store';
+import { BehaviorSubject, Observable, of } from "rxjs";
+import { catchError, tap } from 'rxjs/operators';
+import { LessonsPageRequested, PageQuery } from '../../courses/course.actions';
+import { selectLessonsPage } from '../../courses/course.selectors';
+import { AppState } from '../../store';
 
 
 

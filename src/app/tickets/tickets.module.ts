@@ -14,8 +14,6 @@ import { NgModule } from '@angular/core';
 // import { MatIconModule } from "@angular/material/icon";
 import { RouterModule, Routes } from "@angular/router";
 import { SharedModule } from "@app/shared/shared.module";
-import { TicketEffects, ticketsReducer } from '@app/store/ticket';
-import { UserEffects, usersReducer } from '@app/store/user';
 // import { CommonModule } from '@angular/common';
 import { HomeComponent } from "@app/tickets/home/home.component";
 import { TicketResolver } from "@app/tickets/services/ticket.resolver";
@@ -25,6 +23,8 @@ import { TicketComponent } from "@app/tickets/ticket/ticket.component";
 import { TicketsCardListComponent } from "@app/tickets/tickets-card-list/tickets-card-list.component";
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
+import { TicketEffects, ticketsReducer } from '../store/ticket';
+import { UserEffects, usersReducer } from '../store/user';
 
 export const ticketsRoutes: Routes = [
   {

@@ -1,1 +1,1 @@
-export { FilterObserver } from '@app/shared/filter/filter.component';
+export { FilterObserver } from '../../shared/filter/filter.component';

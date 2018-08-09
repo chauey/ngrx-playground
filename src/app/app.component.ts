@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { BackendService } from '@app/backend.service';
+import { BackendService } from './backend.service';
 
 @Component({
   selector: 'app-root',

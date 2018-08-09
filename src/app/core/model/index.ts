@@ -1,3 +1,3 @@
-export * from '@app/core/model/app';
-export * from '@app/core/model/ticket';
-export * from '@app/core/model/user';
+export * from '../../core/model/app';
+export * from '../../core/model/ticket';
+export * from '../../core/model/user';

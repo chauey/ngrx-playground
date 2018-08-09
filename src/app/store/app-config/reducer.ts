@@ -1,5 +1,5 @@
-import * as AppActions from '@app/store/app-config/actions';
 import { ActionReducerMap } from '@ngrx/store';
+import * as AppActions from '../../store/app-config/actions';
 
 
 export interface SessionState {

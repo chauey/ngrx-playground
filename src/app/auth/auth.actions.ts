@@ -1,5 +1,5 @@
-import { User } from '@app/model/user.model';
 import { Action } from '@ngrx/store';
+import { User } from '..//model/user.model';
 
 
 

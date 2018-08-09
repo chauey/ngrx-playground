@@ -1,17 +1,15 @@
 
-import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
-import {MatPaginator, MatSort, MatTableDataSource} from "@angular/material";
-import {Course} from "@app/courses/model/course";
-import {CoursesService} from "@app/courses/services/courses.service";
-import {debounceTime, distinctUntilChanged, startWith, tap, delay} from 'rxjs/operators';
-import {merge, fromEvent} from "rxjs";
-import {LessonsDataSource} from "@app/courses/services/lessons.datasource";
-import {AppState} from '@app/store';
-import {select, Store} from '@ngrx/store';
-import {PageQuery} from '@app/courses/course.actions';
-import {Observable} from 'rxjs';
-import {selectLessonsLoading} from '@app/courses/course.selectors';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { MatPaginator } from "@angular/material";
+import { ActivatedRoute } from "@angular/router";
+import { Course } from "@app/courses/model/course";
+import { LessonsDataSource } from "@app/courses/services/lessons.datasource";
+import { select, Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { tap } from 'rxjs/operators';
+import { PageQuery } from '../../courses/course.actions';
+import { selectLessonsLoading } from '../../courses/course.selectors';
+import { AppState } from '../../store';
 
 
 @Component({

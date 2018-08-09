@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import * as AppActions from '@app/store/app-config/actions';
-import { AppState } from '@app/store/app-config/reducer';
 import { Store } from '@ngrx/store';
+import * as AppActions from '../../store/app-config/actions';
+import { AppState } from '../../store/app-config/reducer';
 
 
 @Injectable()

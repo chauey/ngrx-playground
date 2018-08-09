@@ -1,8 +1,8 @@
-import { Ticket } from '@app/core';
-import { descriptionAndIdFilter } from '@app/store/ticket/ticket.filters';
-import { TicketsState } from '@app/store/ticket/ticket.reducers';
 import { createEntityAdapter, EntityAdapter } from '@ngrx/entity';
 import { createFeatureSelector, createSelector } from '@ngrx/store';
+import { Ticket } from '../../core';
+import { descriptionAndIdFilter } from '../../store/ticket/ticket.filters';
+import { TicketsState } from '../../store/ticket/ticket.reducers';
 
 export const selectFilteredEntities = descriptionAndIdFilter;
 

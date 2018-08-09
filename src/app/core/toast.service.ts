@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material';
-import { isE2E } from '@app/core/e2e-check';
+import { isE2E } from '../core/e2e-check';
 
 @Injectable()
 export class ToastService {

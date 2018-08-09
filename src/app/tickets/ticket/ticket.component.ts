@@ -2,12 +2,12 @@
 import { AfterViewInit, ChangeDetectionStrategy, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from "@angular/material";
 import { ActivatedRoute } from "@angular/router";
-// import {LessonsDataSource} from "../services/lessons.datasource";
-import { AppState } from '@app/store';
-import { PageQuery } from '@app/store/ticket';
 import { Ticket } from "@app/tickets/model/ticket";
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
+// import {LessonsDataSource} from "../services/lessons.datasource";
+import { AppState } from '../../store';
+import { PageQuery } from '../../store/ticket';
 // import {selectLessonsLoading} from '../ticket.selectors';
 
 @Component({

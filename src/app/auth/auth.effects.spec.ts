@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
-import { AuthEffects } from '@app/auth/auth.effects';
 import { provideMockActions } from '@ngrx/effects/testing';
 import { Observable } from 'rxjs/Observable';
+import { AuthEffects } from '..//auth/auth.effects';
 
 
 describe('AuthService', () => {

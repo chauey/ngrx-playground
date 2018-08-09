@@ -1,6 +1,6 @@
-import { Ticket } from '@app/core/model';
-import { TicketActions, TicketActionTypes } from '@app/store/ticket/ticket.actions';
 import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
+import { Ticket } from '../../core/model';
+import { TicketActions, TicketActionTypes } from '../../store/ticket/ticket.actions';
 
 export interface TicketsState extends EntityState<Ticket> {
   allTicketsLoaded: boolean;

@@ -1,21 +1,21 @@
 import { Injectable } from '@angular/core';
-import { Actions, Effect, ofType } from '@ngrx/effects';
-import {
-  // AllUsersLoaded,
-  // AllUsersRequested,
-  UserActionTypes,
-  LoadAction, LoadSucceedAction
-  // UserLoaded,
-  // UserRequested
-  // , LessonsPageCancelled, LessonsPageLoaded, LessonsPageRequested
-} from '@app/store/user/user.actions';
-import { throwError, of } from 'rxjs';
-import { catchError, concatMap, exhaustMap, filter, map, mergeMap, withLatestFrom, tap } from "rxjs/operators";
-// import { UsersService } from './services/users.service';
-import { AppState } from '@app/store';
-import { select, Store } from '@ngrx/store';
-import { allUsersLoaded, selectAllUsers } from '@app/store/user/user.selectors';
 import { BackendService } from "@app/backend.service";
+import { Actions, Effect, ofType } from '@ngrx/effects';
+import { select, Store } from '@ngrx/store';
+import { map, mergeMap, withLatestFrom } from "rxjs/operators";
+// import { UsersService } from './services/users.service';
+import { AppState } from '../../store';
+import {
+LoadAction, LoadSucceedAction
+    // UserLoaded,
+    // UserRequested
+    // , LessonsPageCancelled, LessonsPageLoaded, LessonsPageRequested
+    ,
+    // AllUsersLoaded,
+    // AllUsersRequested,
+    UserActionTypes
+} from '../../store/user/user.actions';
+import { selectAllUsers } from '../../store/user/user.selectors';
 
 @Injectable()
 export class UserEffects {

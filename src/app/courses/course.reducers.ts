@@ -1,6 +1,6 @@
-import { CourseActions, CourseActionTypes } from '@app/courses/course.actions';
-import { Course } from '@app/courses/model/course';
 import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
+import { CourseActions, CourseActionTypes } from '../courses/course.actions';
+import { Course } from '../courses/model/course';
 
 
 

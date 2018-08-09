@@ -9,16 +9,16 @@ import { MatIconModule } from "@angular/material/icon";
 import { MatTabsModule } from "@angular/material/tabs";
 import { RouterModule, Routes } from "@angular/router";
 import { CourseDialogComponent } from "@app/courses/course-dialog/course-dialog.component";
-import { CourseEffects } from '@app/courses/course.effects';
-import { coursesReducer } from '@app/courses/course.reducers';
 import { CourseComponent } from "@app/courses/course/course.component";
 import { CoursesCardListComponent } from "@app/courses/courses-card-list/courses-card-list.component";
 import { HomeComponent } from "@app/courses/home/home.component";
-import { lessonsReducer } from '@app/courses/lessons.reducers';
 import { CourseResolver } from "@app/courses/services/course.resolver";
 import { CoursesService } from "@app/courses/services/courses.service";
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
+import { CourseEffects } from '../courses/course.effects';
+import { coursesReducer } from '../courses/course.reducers';
+import { lessonsReducer } from '../courses/lessons.reducers';
 
 
 export const coursesRoutes: Routes = [

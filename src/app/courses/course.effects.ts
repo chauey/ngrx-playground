@@ -1,19 +1,12 @@
-import {Injectable} from '@angular/core';
-import {Actions, Effect, ofType} from '@ngrx/effects';
-import {
-  AllCoursesLoaded,
-  AllCoursesRequested,
-  CourseActionTypes,
-  CourseLoaded,
-  CourseRequested, LessonsPageCancelled, LessonsPageLoaded,
-  LessonsPageRequested
-} from '@app/courses/course.actions';
-import {throwError,of} from 'rxjs';
-import {catchError, concatMap, exhaustMap, filter, map, mergeMap, withLatestFrom} from "rxjs/operators";
-import {CoursesService} from '@app/courses/services/courses.service';
-import {AppState} from '@app/store';
-import {select, Store} from '@ngrx/store';
-import {allCoursesLoaded} from '@app/courses/course.selectors';
+import { Injectable } from '@angular/core';
+import { Actions, Effect, ofType } from '@ngrx/effects';
+import { select, Store } from '@ngrx/store';
+import { of } from 'rxjs';
+import { catchError, filter, map, mergeMap, withLatestFrom } from "rxjs/operators";
+import { AllCoursesLoaded, AllCoursesRequested, CourseActionTypes, CourseLoaded, CourseRequested, LessonsPageCancelled, LessonsPageLoaded, LessonsPageRequested } from '../courses/course.actions';
+import { allCoursesLoaded } from '../courses/course.selectors';
+import { CoursesService } from '../courses/services/courses.service';
+import { AppState } from '../store';
 
 @Injectable()
 export class CourseEffects {

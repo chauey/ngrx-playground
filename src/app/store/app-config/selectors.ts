@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { AppState, initialState } from '@app/store/app-config/reducer';
 import { createFeatureSelector, createSelector, Store } from '@ngrx/store';
 import { distinctUntilChanged } from 'rxjs/operators';
+import { AppState, initialState } from '../../store/app-config/reducer';
 
 
 

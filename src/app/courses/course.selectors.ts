@@ -1,9 +1,9 @@
-import { PageQuery } from '@app/courses/course.actions';
-import * as fromCourse from '@app/courses/course.reducers';
-import { CoursesState } from '@app/courses/course.reducers';
-import * as fromLesson from '@app/courses/lessons.reducers';
-import { LessonsState } from '@app/courses/lessons.reducers';
 import { createFeatureSelector, createSelector } from '@ngrx/store';
+import { PageQuery } from '../courses/course.actions';
+import * as fromCourse from '../courses/course.reducers';
+import { CoursesState } from '../courses/course.reducers';
+import * as fromLesson from '../courses/lessons.reducers';
+import { LessonsState } from '../courses/lessons.reducers';
 
 
 

@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { AllCoursesRequested } from '@app/courses/course.actions';
-import { selectAdvancedCourses, selectBeginnerCourses, selectPromoTotal } from '@app/courses/course.selectors';
 import { Course } from "@app/courses/model/course";
-import { AppState } from '@app/store';
 import { select, Store } from '@ngrx/store';
 import { Observable } from "rxjs";
+import { AllCoursesRequested } from '../../courses/course.actions';
+import { selectAdvancedCourses, selectBeginnerCourses, selectPromoTotal } from '../../courses/course.selectors';
+import { AppState } from '../../store';
 @Component({
     selector: 'home',
     templateUrl: './home.component.html',
