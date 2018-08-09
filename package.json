@@ -1,7 +1,7 @@
 {
   "name": "angular-template",
   "description": "",
-  "homepage": "https://stackblitz.com/edit/nrwl-coding-assignment-2018",
+  "homepage": "https://stackblitz.com/github/chauey/ngrx-playground",
   "dependencies": {
     "@angular/animations": "^6.1.1",
     "@angular/cdk": "^6.4.2",
