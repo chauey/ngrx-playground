@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from "@angular/router";
 import { AppState } from "@app/store";
-import { selectTicketById, TicketRequested } from '@app/store/ticket';
+import { selectById, TicketRequested } from '@app/store/ticket';
 import { Ticket } from "@app/tickets/model/ticket";
 import { TicketsService } from "@app/tickets/services/tickets.service";
 import { select, Store } from "@ngrx/store";
@@ -23,7 +23,7 @@ export class TicketResolver implements Resolve<Ticket> {
 
     return this.store
       .pipe(
-      select(selectTicketById(ticketId)),
+      select(selectById(ticketId)),
       tap(ticket => {
         if (!ticket) {
           this.store.dispatch(new TicketRequested({ ticketId }));

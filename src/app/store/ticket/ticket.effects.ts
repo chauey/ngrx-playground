@@ -1,20 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Actions, Effect, ofType } from '@ngrx/effects';
-import {
-  CompleteAction, CompleteSucceedAction,
-  AllTicketsLoaded,
-  AllTicketsRequested,
-  TicketActionTypes,
-  TicketLoaded,
-  TicketRequested
-} from './ticket.actions';
-import { throwError, of } from 'rxjs';
-import { catchError, concatMap, exhaustMap, filter, map, mergeMap, withLatestFrom } from "rxjs/operators";
+import { BackendService } from "@app/backend.service";
 // import { TicketsService } from './services/tickets.service';
 import { AppState } from '@app/store';
+import { Actions, Effect, ofType } from '@ngrx/effects';
 import { select, Store } from '@ngrx/store';
-import { allTicketsLoaded } from './ticket.selectors';
-import { BackendService } from "@app/backend.service";
+import { filter, map, mergeMap, withLatestFrom } from "rxjs/operators";
+import { AllTicketsLoaded, AllTicketsRequested, CompleteAction, CompleteSucceedAction, TicketActionTypes, TicketLoaded, TicketRequested } from './ticket.actions';
+import { allLoaded } from './ticket.selectors';
 
 @Injectable()
 export class TicketEffects {
@@ -34,7 +26,7 @@ export class TicketEffects {
   loadAllTickets$ = this.actions$
     .pipe(
     ofType<AllTicketsRequested>(TicketActionTypes.AllTicketsRequested),
-    withLatestFrom(this.store.pipe(select(allTicketsLoaded))),
+    withLatestFrom(this.store.pipe(select(allLoaded))),
     filter(([action, allTicketsLoaded]) => !allTicketsLoaded),
     mergeMap(() => this.ticketsService.tickets()),
     map(tickets => new AllTicketsLoaded({ tickets }))

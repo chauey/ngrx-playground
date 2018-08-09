@@ -4,6 +4,13 @@
     <button mat-raised-button color="primary" type="button" (click)="addTicket()" *ngIf="!selectedTicket" matTooltip="Add a new ticket">Add</button>
   </div>
   <!-- <app-filter [filterObserver]="filterObserver" filterPlaceholder="Filter by each ticket's description" class="filter-panel"></app-filter> -->
+  <mat-form-field>
+    <input matInput [formControl]="filter" placeholder="Filter ticket description">
+    <!-- (change)="filterChanged($event)"> -->
+  </mat-form-field>
+  <!-- <div *ngFor="let ticket of filteredTickets$ | async">
+    {{ticket.description}}
+  </div> -->
 </div>
 
 <div class="tickets-panel">

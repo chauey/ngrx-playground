@@ -7,7 +7,8 @@ export interface TicketsState extends EntityState<Ticket> {
   filter: string;
 }
 
-export const adapter: EntityAdapter<Ticket> = createEntityAdapter<Ticket>();
+// export
+const adapter: EntityAdapter<Ticket> = createEntityAdapter<Ticket>();
 
 export const initialTicketsState: TicketsState = adapter.getInitialState({
   allTicketsLoaded: false,
@@ -49,9 +50,9 @@ export function ticketsReducer(state = initialTicketsState, action: TicketAction
   }
 }
 
-export const {
-  selectAll,
-  selectEntities,
-  selectIds,
-  selectTotal
-} = adapter.getSelectors();
+// export const {
+//   selectAll,
+//   selectEntities,
+//   selectIds,
+//   selectTotal
+// } = adapter.getSelectors();
